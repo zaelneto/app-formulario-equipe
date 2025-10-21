@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Formulário de Dados</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #1c1f2b, #2b2f3a);
+      color: #f5f5f5;
+      padding: 40px 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+      box-sizing: border-box;
+    }
+
+    /* Cabeçalho estilo papel timbrado */
+    .header {
+      width: 100%;
+      max-width: 900px;
+      background: linear-gradient(90deg, #007b5e, #00513d);
+      padding: 12px 18px;
+      border-top-left-radius: 12px;
+      border-top-right-radius: 12px;
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      box-sizing: border-box;
+    }
+
+    .logo-wrapper {
+      display:flex;
+      align-items:center;
+      gap:12px;
+    }
+
+    .header img {
+      display:block;
+      height: 72px;      /* mantém proporção aproximada do timbrado */
+      width: auto;
+    }
+
+    .header h1 {
+      font-size: 18px;
+      color: #fff;
+      margin: 0;
+      flex: 1;
+      text-align: center;
+      font-weight: 700;
+    }
+
+    /* Container do formulário */
+    form {
+      width: 100%;
+      max-width: 900px;
+      background: #2a2e3b;
+      padding: 30px;
+      border-radius: 0 0 12px 12px;
+      box-shadow: 0 6px 28px rgba(0, 0, 0, 0.45);
+      box-sizing: border-box;
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 20px;
+      font-size: 20px;
+      color: #00c79f;
+    }
+
+    label {
+      display: block;
+      margin-top: 14px;
+      font-weight: bold;
+      font-size: 14px;
+    }
+
+    input, select, textarea {
+      width: 100%;
+      padding: 10px;
+      margin-top: 6px;
+      background: #3a3f4f;
+      border: 1px solid #555;
+      border-radius: 6px;
+      color: #fff;
+      box-sizing: border-box;
+    }
+
+    input:focus, select:focus, textarea:focus {
+      outline: none;
+      border-color: #00c79f;
+      background: #43485a;
+    }
+
+    .row { display:flex; gap:12px; }
+    .col { flex:1; }
+
+    hr {
+      margin: 22px 0;
+      border: none;
+      border-top: 1px solid #444;
+    }
+
+    button {
+      margin-top: 18px;
+      padding: 12px 18px;
+      background: #00c79f;
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
+      cursor: pointer;
+      width: 100%;
+    }
+
+    button:hover { background: #00b38f; }
+
+    /* espaçamento das caixas a partir das bordas do container central */
+    .page-wrap {
+      width: 100%;
+      max-width: 950px;
+      box-sizing: border-box;
+      padding: 0 18px; /* esse padding afasta as caixas da borda */
+    }
+
+    footer {
+      margin-top: 18px;
+      color: #bfc9c1;
+      width: 100%;
+      max-width: 900px;
+      text-align: center;
+      font-size: 13px;
+    }
+
+    @media (max-width: 720px) {
+      .header { flex-direction: column; text-align: center; padding: 14px; gap:10px; }
+      .header h1 { text-align: center; font-size: 16px; }
+      .header img { height: 56px; }
+      form { padding: 20px; }
+      .page-wrap { padding: 0 12px; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="page-wrap">
+    <div class="header" role="banner" aria-label="Cabeçalho institucional EMSERH">
+      <div class="logo-wrapper" style="align-items:center;">
+        
+      </div>
+
+      <h1>Empresa Maranhense de Serviços Hospitalares - Gerência de Infraestrutura</h1>
+
+    </div>
+
+    <form action="/enviar" method="post" autocomplete="off" novalidate>
+      <h2>Formulário de Dados Pessoais e Bancários</h2>
+
+      <label for="nome">Nome Completo:</label>
+      <input id="nome" type="text" name="nome" required>
+
+      <label for="data_nasc">Data de Nascimento:</label>
+      <input id="data_nasc" type="date" name="data_nasc" required>
+
+      <label for="cpf">CPF:</label>
+      <input id="cpf" type="text" name="cpf" inputmode="numeric" required>
+
+      <label for="rg">RG:</label>
+      <input id="rg" type="text" name="rg">
+
+      <label for="cargo">Cargo:</label>
+      <input id="cargo" type="text" name="cargo">
+
+      <label for="matricula">Matrícula:</label>
+      <input id="matricula" type="text" name="matricula">
+
+      <hr>
+
+      <label for="banco">Banco:</label>
+      <input id="banco" type="text" name="banco">
+
+      <label for="agencia">Agência:</label>
+      <input id="agencia" type="text" name="agencia">
+
+      <label for="conta">Conta Bancária:</label>
+      <input id="conta" type="text" name="conta">
+
+      <button type="submit">Enviar</button>
+    </form>
+
+    <footer>
+      Governo do Estado do Maranhão — EMSERH
+    </footer>
+  </div>
+
+</body>
+</html>
+
